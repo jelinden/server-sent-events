@@ -1,0 +1,24 @@
+<html>
+    <header>
+        <title>Server Side Events</title>
+        <script type="text/javascript">
+            if (typeof (EventSource) !== "undefined") {
+                var source = new EventSource("/events?stream=messages");
+                source.onmessage = function (event) {
+                    document.getElementById("sse").innerHTML = "<br/>" + event.data + "<br/>";
+                };
+            } else {
+                document.getElementById("sse").innerHTML = "Your browser does not support server side events";
+            }
+        </script>
+    </header>
+
+    <body>
+        <br />
+        <div>Hello Server Side Events!</div>
+        <div id="sse"></div>
+        <img src="https://jelinden.fi/static/images/BZaRM5XiR/sse.mp4"></img>
+
+    </body>
+
+</html>
