@@ -1,4 +1,4 @@
-# Server Side Events
+# Server-sent Events
 
 ## Start the server
 
